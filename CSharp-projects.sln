@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTime", "DataTime\DataTi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shopProject", "shopProject\shopProject.csproj", "{8B8F592F-DB5A-4435-BA78-62F02A41B2C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sortPlayers", "sortPlayers\sortPlayers.csproj", "{15C89E27-A839-43EB-B6E3-E23BE92F7849}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +62,9 @@ Global
 		{8B8F592F-DB5A-4435-BA78-62F02A41B2C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B8F592F-DB5A-4435-BA78-62F02A41B2C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8F592F-DB5A-4435-BA78-62F02A41B2C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C89E27-A839-43EB-B6E3-E23BE92F7849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C89E27-A839-43EB-B6E3-E23BE92F7849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C89E27-A839-43EB-B6E3-E23BE92F7849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C89E27-A839-43EB-B6E3-E23BE92F7849}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
