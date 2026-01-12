@@ -18,6 +18,11 @@ public class Shop : IEnumerable<Product>
         _products.Add(product);
     }
 
+    public void Sort()
+    {
+        _products.Sort();
+    }
+
     public IEnumerator<Product> GetEnumerator()
     {
         return _products.GetEnumerator();

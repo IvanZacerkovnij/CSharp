@@ -15,7 +15,9 @@ class Program
         kopiechka.AddProduct(new Product("Maria",2.99));
         kopiechka.AddProduct(new Product("Jerry",2.99));
         kopiechka.AddProduct(new Product("Lays",6.99));
-
+        
+        kopiechka.Sort();
+        
         foreach (var product in kopiechka)
         {
             Console.WriteLine(product);

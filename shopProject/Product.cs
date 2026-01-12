@@ -1,6 +1,6 @@
 namespace shopProject;
 
-public class Product
+public class Product: IComparable<Product>
 {
     private static int _id = 0;
     public int Id { get; }
@@ -17,5 +17,11 @@ public class Product
     public override string ToString()
     {
         return $"{Id}: {Name}, {Price}";
+    }
+
+    public int CompareTo(Product? other)
+    {
+        if(other == null) return 1;
+        return string.Compare(Name, other.Name, StringComparison.OrdinalIgnoreCase);
     }
 }
