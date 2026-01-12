@@ -1,0 +1,14 @@
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/bin/Debug/net10.0/InterfaceLesson
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/bin/Debug/net10.0/InterfaceLesson.deps.json
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/bin/Debug/net10.0/InterfaceLesson.runtimeconfig.json
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/bin/Debug/net10.0/InterfaceLesson.dll
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/bin/Debug/net10.0/InterfaceLesson.pdb
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/obj/Debug/net10.0/InterfaceLesson.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/obj/Debug/net10.0/InterfaceLesson.AssemblyInfoInputs.cache
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/obj/Debug/net10.0/InterfaceLesson.AssemblyInfo.cs
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/obj/Debug/net10.0/InterfaceLesson.csproj.CoreCompileInputs.cache
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/obj/Debug/net10.0/InterfaceLesson.dll
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/obj/Debug/net10.0/refint/InterfaceLesson.dll
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/obj/Debug/net10.0/InterfaceLesson.pdb
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/obj/Debug/net10.0/InterfaceLesson.genruntimeconfig.cache
+/Users/ivanzatserkovniy/RiderProjects/program2/InterfaceLesson/obj/Debug/net10.0/ref/InterfaceLesson.dll

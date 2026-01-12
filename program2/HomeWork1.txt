@@ -1,0 +1,110 @@
+namespace program2;
+using mathClass;
+
+class Program
+{
+    static void task4()
+    {
+        Console.Write("Enter a number [100000;999999]: ");
+        int number = Int32.Parse(Console.ReadLine());
+
+        if (number < 100000 || number > 999999)
+        {
+            Console.WriteLine("Invalid input");
+            return;
+        }
+
+        Console.Write("Enter index of digit to change: ");
+        byte first = byte.Parse(Console.ReadLine());
+        if (first < 0 || first > 6)
+        {
+            Console.WriteLine("Invalid input");
+            return;
+        }
+        Console.Write("Enter index of digit to change: ");
+        byte second = byte.Parse(Console.ReadLine());
+        if (second < 0 || second > 6)
+        {
+            Console.WriteLine("Invalid input");
+            return;
+        }
+        if (first == second)
+        {
+            Console.Write($"Result: {number}");
+        }
+
+        int firstDigit = (number / (int)Math.Pow(10, 6 - first)) % 10;
+        int secondDigit = (number / (int)Math.Pow(10, 6 - second)) % 10;
+        
+        int result = number - firstDigit * (int)Math.Pow(10, 6 - first);
+        result += secondDigit * (int)Math.Pow(10, 6 - first);
+        result -= secondDigit * (int)Math.Pow(10, 6 - second);
+        result += firstDigit * (int)Math.Pow(10, 6 - second);
+        
+        Console.WriteLine($"Result: {result}");
+    }
+    static void task3()
+    {
+        int result = 0;
+        Console.WriteLine("Enter a digit [0,9]");
+        for (int i = 3; i >= 0; i--)
+        {
+            byte digit = byte.Parse(Console.ReadLine());
+            if (digit < 0 || digit > 9)
+            {
+                Console.WriteLine("Invalid digit");
+                i++;
+            }
+            else
+            {
+                result += (int)Math.Pow(10, i) *  digit;
+            }
+        }
+        Console.WriteLine($"The result is: {result}");
+    }
+    static void task2()
+    {
+        Console.Write("Enter a number: ");
+        int number = Int32.Parse(Console.ReadLine());
+        Console.Write("Enter procent of number [1;100]: ");
+        int procent = Int32.Parse(Console.ReadLine());
+
+        if (procent < 0 || procent > 100)
+        {
+            Console.WriteLine("Invalid procent input");
+            return;
+        }
+
+        float result = (number / 100) * procent;
+        Console.WriteLine($"The {procent}% of {number} is {result}");
+    }
+    static void task1()
+    {
+        Console.Write("Enter a number [1;100]: ");
+        short number = Int16.Parse(Console.ReadLine());
+
+        if (number < 1)
+        {
+            Console.WriteLine("You enter wrong number...");
+            return;
+        }
+        if (number % 3 == 0 && number % 5 == 0)
+        {
+            Console.WriteLine("Fizz Buzz");
+        } else if (number % 3 == 0)
+        {
+            Console.WriteLine("Fizz");
+        } else if (number % 5 == 0)
+        {
+            Console.WriteLine("Buzz");
+        }
+    }
+    
+    static void Main(string[] args)
+    {
+        task1();
+        task2();
+        task3();
+        task4();
+    }
+}

@@ -1,0 +1,14 @@
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/obj/Debug/net10.0/homework2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/obj/Debug/net10.0/homework2.AssemblyInfoInputs.cache
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/obj/Debug/net10.0/homework2.AssemblyInfo.cs
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/obj/Debug/net10.0/homework2.csproj.CoreCompileInputs.cache
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/bin/Debug/net10.0/homework2
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/bin/Debug/net10.0/homework2.deps.json
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/bin/Debug/net10.0/homework2.runtimeconfig.json
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/bin/Debug/net10.0/homework2.dll
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/bin/Debug/net10.0/homework2.pdb
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/obj/Debug/net10.0/homework2.dll
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/obj/Debug/net10.0/refint/homework2.dll
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/obj/Debug/net10.0/homework2.pdb
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/obj/Debug/net10.0/homework2.genruntimeconfig.cache
+/Users/ivanzatserkovniy/RiderProjects/program2/homework2/obj/Debug/net10.0/ref/homework2.dll

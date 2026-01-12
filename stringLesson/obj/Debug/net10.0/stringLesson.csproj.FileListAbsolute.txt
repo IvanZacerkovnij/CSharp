@@ -1,0 +1,14 @@
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/bin/Debug/net10.0/stringLesson
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/bin/Debug/net10.0/stringLesson.deps.json
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/bin/Debug/net10.0/stringLesson.runtimeconfig.json
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/bin/Debug/net10.0/stringLesson.dll
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/bin/Debug/net10.0/stringLesson.pdb
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/obj/Debug/net10.0/stringLesson.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/obj/Debug/net10.0/stringLesson.AssemblyInfoInputs.cache
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/obj/Debug/net10.0/stringLesson.AssemblyInfo.cs
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/obj/Debug/net10.0/stringLesson.csproj.CoreCompileInputs.cache
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/obj/Debug/net10.0/stringLesson.dll
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/obj/Debug/net10.0/refint/stringLesson.dll
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/obj/Debug/net10.0/stringLesson.pdb
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/obj/Debug/net10.0/stringLesson.genruntimeconfig.cache
+/Users/ivanzatserkovniy/RiderProjects/program2/stringLesson/obj/Debug/net10.0/ref/stringLesson.dll
