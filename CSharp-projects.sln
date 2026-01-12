@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "program2", "program2\program2.csproj", "{6733C3C7-B522-40AF-AC2A-DB5A79DB0462}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "homework1", "homework1\homework1.csproj", "{6733C3C7-B522-40AF-AC2A-DB5A79DB0462}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "homework2", "homework2\homework2.csproj", "{F99CD7E3-2D74-4D11-8F8F-1DB79CE88C60}"
 EndProject
@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stringLesson", "stringLesso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "homework3", "homework3\homework3.csproj", "{BB0B8F35-2EB0-49F0-8BF7-63729B42DDC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson19_12", "Lesson19_12\Lesson19_12.csproj", "{BD78321F-8694-4050-AC56-AE780A043588}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cardProject", "cardProject\cardProject.csproj", "{BD78321F-8694-4050-AC56-AE780A043588}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceLesson", "InterfaceLesson\InterfaceLesson.csproj", "{3D13FB57-1F7A-44F7-A587-030150B0889B}"
 EndProject
@@ -16,7 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MYdelegate", "MYdelegate\MY
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTime", "DataTime\DataTime.csproj", "{38AB2ACD-4B26-40CB-9D4F-245CA74B0E0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{8B8F592F-DB5A-4435-BA78-62F02A41B2C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shopProject", "shopProject\shopProject.csproj", "{8B8F592F-DB5A-4435-BA78-62F02A41B2C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
