@@ -5,7 +5,7 @@ namespace fileSystem;
 public class FileManager
 {
     public string path { get; private set; }
-    public List<People> data;
+    public List<People>? data;
     public FileManager(string path)
     {
         this.path = path;
