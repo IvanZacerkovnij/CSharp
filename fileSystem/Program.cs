@@ -5,6 +5,8 @@ namespace fileSystem;
 
 class Program
 {
+    private static string path = Path.Combine(Directory.GetCurrentDirectory() ,"../../../test/person.json");
+    
     static void Main(string[] args)
     {
         List<People> personeList = new List<People>();
@@ -15,6 +17,13 @@ class Program
         }
         
         string json = JsonConvert.SerializeObject(personeList);
-        File.WriteAllText("person.json", json);
+        File.WriteAllText(path, json);
+        
+        FileManager fileManager = new FileManager(path);
+        fileManager.AddPersonToFile(new People());
+        fileManager.ShowAllPeople();
+        Console.WriteLine();
+        fileManager.RemovePersoneToFile(5);
+        fileManager.ShowAllPeople();
     }
 }

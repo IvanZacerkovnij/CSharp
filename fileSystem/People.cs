@@ -2,8 +2,8 @@ namespace fileSystem;
 
 public class People
 {
-    public string name { get;}
-    public byte age { get; }
+    public string name { get; set; }
+    public byte age { get; set; }
 
     public People()
     {
