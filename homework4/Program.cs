@@ -17,7 +17,7 @@ class Censor
         _bannedWords.Add(word);
     }
 
-    public void RemoveCensoredWord(string word)
+    public void RemoveBannedWord(string word)
     {
         if (_bannedWords.Contains(word))
         {
@@ -29,7 +29,7 @@ class Censor
         }
     }
 
-    public void ShowAllCensoredWords()
+    public void ShowAllBannedWords()
     {
         Console.WriteLine("Censored words:");
         foreach (string word in _bannedWords)
