@@ -6,12 +6,14 @@ public class Developer
     public int Age { get; set; }
     public string Country { get; set; }
     public List<string> ProgramingLanguages { get; set; }
+    public int Salary { get; set; }
 
-    public Developer(string name, int age, string country, List<string> programingLanguages)
+    public Developer(string name, int age, string country,int salary, List<string> programingLanguages)
     {
         Name = name;
         Age = age;
         Country = country;
+        Salary = salary;
         ProgramingLanguages = programingLanguages;
     }
 
