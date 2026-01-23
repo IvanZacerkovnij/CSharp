@@ -17,7 +17,7 @@ class Program
         }
         
         Console.WriteLine("Linq Extension group");
-        var developerGroup2 = developers.GroupBy(dev => dev.Name);
+        var developerGroup2 = developers.GroupBy(dev => dev.Position);
         foreach (var dev in developerGroup2)
         {
             Console.WriteLine(dev.Key + ":");
