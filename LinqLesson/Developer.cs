@@ -3,30 +3,18 @@ namespace LinqLesson;
 public class Developer
 {
     public string Name { get; set; }
-    public int Age { get; set; }
-    public string Country { get; set; }
-    public List<string> ProgramingLanguages { get; set; }
     public int Salary { get; set; }
+    public string Position { get; set; }
 
-    public Developer(string name, int age, string country,int salary, List<string> programingLanguages)
+    public Developer(string name,int salary,string position)
     {
         Name = name;
-        Age = age;
-        Country = country;
         Salary = salary;
-        ProgramingLanguages = programingLanguages;
-    }
-
-    public void ShowLanguages()
-    {
-        foreach (var lang in ProgramingLanguages)
-        {
-            Console.WriteLine(lang);
-        }
+        Position = position;
     }
 
     public override string ToString()
     {
-        return $"{Name}, {Age}, {Country} ";
+        return $"{Name}, {Salary}, {Position} ";
     }
 }

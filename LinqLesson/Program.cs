@@ -2,111 +2,43 @@
 
 class Program
 {
-    static void task1(List<Developer> developers)
+    static void linqGroup(List<Developer> developers)
     {
-        var requiredDevs = from dev in developers
-            where dev.Country == "Ukraine" || dev.Country == "France"
-            select dev;
-        foreach (var dev in requiredDevs)
+        var developerGroup = from dev in developers
+            group dev by dev.Position;
+        foreach (var dev in developerGroup)
         {
-            Console.WriteLine(dev);
-        }
-
-        Console.WriteLine();
-        var languages = from dev in developers
-            where dev.ProgramingLanguages.Contains("C#")
-            where dev.ProgramingLanguages.Contains("Java")
-            select dev;
-        foreach (var dev in languages)
-        {
-            Console.WriteLine(dev);
-            dev.ShowLanguages();
+            Console.WriteLine(dev.Key + ":");
+            foreach (var groupDev in dev)
+            {
+                Console.WriteLine(groupDev.Name);
+            }
             Console.WriteLine();
         }
-
-        Console.WriteLine();
-        var languages2 = from dev in developers
-            from lang in dev.ProgramingLanguages
-            where dev.ProgramingLanguages.All(l => l != "C++")
-            where dev.Age > 20
-            select dev;
-        foreach (var dev in languages2)
-        {
-            Console.WriteLine(dev);
-            dev.ShowLanguages();
-        }
-
-        Console.WriteLine();
-        Console.WriteLine("Second method:");
-        var requiredDevs2 = developers.Where(dev => dev.Country == "Ukraine"
-                                                    || dev.Country == "France");
-        foreach (var dev in requiredDevs2)
-        {
-            Console.WriteLine(dev);
-        }
-
-        Console.WriteLine();
-        var languages3 = developers.Where(dev => dev.ProgramingLanguages.Contains("C#")
-                                                 && dev.ProgramingLanguages.Contains("Java"));
-        foreach (var dev in languages3)
-        {
-            Console.WriteLine(dev);
-            dev.ShowLanguages();
-        }
-
-        Console.WriteLine();
-        var languages4 = developers.Where(dev => !(dev.ProgramingLanguages.Contains("C++"))
-                                                 && dev.Age > 20);
-        foreach (var dev in languages4)
-        {
-            Console.WriteLine(dev);
-            dev.ShowLanguages();
-        }
-    }
-
-    static void task2(List<Developer> developers)
-    {
-        Console.WriteLine();
-        var age = from dev in developers
-            orderby dev.Age descending
-            select dev;
-        foreach (var dev in age)
-        {
-            Console.WriteLine(dev);
-        }
-
-        Console.WriteLine();
-        var age2 = developers.OrderByDescending(dev => dev.Age);
-        foreach (var dev in age2)
-        {
-            Console.WriteLine(dev);
-        }
-
-        Console.WriteLine();
-        var devKnowsCSharp = from dev in developers
-            where dev.ProgramingLanguages.Contains("C#")
-            select dev;
-        Console.WriteLine($"{devKnowsCSharp.Count()} developers know C#");
-
-        var devKnowsCsharp2 = developers.Where(dev => dev.ProgramingLanguages.Contains("C#")).Count();
-        Console.WriteLine($"{devKnowsCsharp2} developers know C#");
         
-        Console.WriteLine();
-        var salary = developers.Average(dev => dev.Salary);
-        Console.WriteLine($"average salary: {salary}");
+        Console.WriteLine("Linq Extension group");
+        var developerGroup2 = developers.GroupBy(dev => dev.Name);
+        foreach (var dev in developerGroup2)
+        {
+            Console.WriteLine(dev.Key + ":");
+            foreach (var groupDev in dev)
+            {
+                Console.WriteLine(groupDev.Name);
+            }
+            Console.WriteLine();
+        }
     }
     
     static void Main(string[] args)
     {
         List<Developer> developers = new()
         {
-            new Developer("Ivan", 20, "Ukraine", 500, new List<string>() { "Java", "C#", "C++" }),
-            new Developer("Oleg", 28, "Germany",700, new List<string>() { "Java", "C++" }),
-            new Developer("Igor", 21, "Ukraine", 800,new List<string>() { "Java" }),
-            new Developer("David", 18, "France",300 ,new List<string>() { "Python" })
+            new Developer("Ivan", 500, "Junior"),
+            new Developer("Oleg" , 1500 , "Senior"),
+            new Developer("Igor", 800 , "Middle"),
+            new Developer("David",300 , "Junior")
         };
-        // task1(developers);
-        task2(developers);
+        linqGroup(developers);
             
     }
 }
