@@ -9,11 +9,11 @@ public class DarkUIFactory : IUIFactory
 {
     public IButton CreateButton()
     {
-        return new Button(true);
+        return new LightButton();
     }
 
     public ITextBox CreateTextBox()
     {
-        return new TextBox(true);
+        return new LightTextBox();
     }
 }

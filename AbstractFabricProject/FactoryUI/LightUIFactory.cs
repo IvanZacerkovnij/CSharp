@@ -8,11 +8,11 @@ public class LightUIFactory : IUIFactory
 {
     public IButton CreateButton()
     {
-        return new Button(false);
+        return new LightButton();
     }
 
     public ITextBox CreateTextBox()
     {
-        return new TextBox(false);
+        return new LightTextBox();
     }
 }
