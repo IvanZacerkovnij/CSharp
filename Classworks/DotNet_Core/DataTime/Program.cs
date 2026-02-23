@@ -1,0 +1,65 @@
+﻿namespace DataTime;
+
+class Program
+{
+    static void CurrentTime()
+    {
+        DateTime now = DateTime.Now;
+        int hour = now.Hour;
+        int minute =  now.Minute;
+        Console.WriteLine($"{hour}:{minute}");
+    }
+
+    static void CurrentDate()
+    {
+        DateTime now = DateTime.Now;
+        int day = now.Day;
+        int month = now.Month;
+        int year = now.Year;
+        Console.WriteLine($"{day}.{month}.{year}");
+    }
+
+    static void CurrentDayOfWeek()
+    {
+        DateTime now = DateTime.Now;
+        string dayOfWeek = now.DayOfWeek.ToString();
+        Console.WriteLine($"{dayOfWeek}");
+    }
+
+    static double AreaTriangle(double a, double b, double c)
+    {
+        if (a + b < c || b + c < a || a + c < b)
+        {
+            Console.WriteLine("Impossible triangle");
+            return 0.0;
+        }
+        double p = (a + b + c) / 2;
+        return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+    }
+
+    static double AreaSquare(double a, double b)
+    {
+        if (a < 0 || b < 0)
+        {
+            Console.WriteLine("Impossible square");
+            return 0.0;
+        }
+
+        return a * b;
+    }
+    
+    static void Main(string[] args)
+    {
+        Action currentTime = CurrentTime;
+        Action currentDate = CurrentDate;
+        Action currentDayOfWeek = CurrentDayOfWeek;
+        Func<double, double, double, double> tiangleArea = AreaTriangle;
+        Func<double, double, double> squareArea = AreaSquare;
+
+        currentTime();
+        currentDate();
+        currentDayOfWeek();
+        Console.WriteLine(tiangleArea(3,4,5));
+        Console.WriteLine(squareArea(3,5));
+    }
+}
