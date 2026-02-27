@@ -15,7 +15,7 @@ public class ShopDBContext : DbContext
             $"Server=localhost,1433;" +
             $"Database=ShopDB;" +
             $"User Id=SA;" +
-            $"Password=********;" +
+            $"Password=Skylex717820732!;" +
             $"Encrypt=False;");
     }
 }
