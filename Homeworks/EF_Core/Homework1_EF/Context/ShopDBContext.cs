@@ -1,21 +1,13 @@
+using Homework1_EF.Entities;
 using Microsoft.EntityFrameworkCore;
-using Homework1.Entities;
 
-namespace Homework1.Context;
+namespace Homework1_EF.Context;
 
 public class ShopDBContext : DbContext
 {
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        base.OnConfiguring(optionsBuilder);
-        optionsBuilder.UseSqlServer(
-            $"Server=localhost,1433;" +
-            $"Database=ShopDB;" +
-            $"User Id=SA;" +
-            $"Password=Skylex717820732!;" +
-            $"Encrypt=False;");
-    }
+    public ShopDBContext(DbContextOptions<ShopDBContext> options) : base(options)
+    {}
 }

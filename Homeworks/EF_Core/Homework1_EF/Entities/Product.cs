@@ -1,4 +1,4 @@
-namespace Homework1.Entities;
+namespace Homework1_EF.Entities;
 
 public class Product
 {

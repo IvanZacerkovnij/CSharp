@@ -1,16 +1,30 @@
-using Homework1.Context;
-using Homework1.Entities;
+using Homework1_EF.Configurators;
+using Homework1_EF.Context;
+using Homework1_EF.Entities;
+using Homework1_EF.Interfaces;
+using Homework1_EF.Repositories;
+using Homework1_EF.Services;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Homework1.Manager;
+namespace Homework1_EF.Manager;
 
-public class ShopDBManger : IDisposable
+public class ShopDBManger
 {
-    private ShopDBContext Db;
+    private ServiceCollection _builder;
+    private IServiceProvider _serviceProvider;
     
-    public ShopDBManger(ShopDBContext db)
+    public ShopDBManger()
     {
-        Db = db;
-        Db.Database.EnsureCreated();
+        _builder = new ServiceCollection();
+        _builder.AddDbContext<ShopDBContext>(options => ShopDbConfigurator.Configure(options));
+
+        _builder.AddScoped<IProductService, ProductService>();
+        _builder.AddScoped<ICategoryService, CategoryService>();
+            
+        _builder.AddScoped<IProductRepository, ProductRepository>();
+        _builder.AddScoped<ICategoryRepository, CategoryRepository>();
+        
+        _serviceProvider = _builder.BuildServiceProvider();
     }
 
     private void InputProduct(
@@ -40,8 +54,9 @@ public class ShopDBManger : IDisposable
             out double price,
             out int stockQuantity,
             out int categoryId);
-
-        Db.Products.Add(new Product()
+            
+        var productService = _serviceProvider.GetService<IProductService>();    
+        productService.Add(new Product()
         {
             Name = name,
             Description = description,
@@ -49,7 +64,6 @@ public class ShopDBManger : IDisposable
             StockQuantity = stockQuantity,
             CategoryId = categoryId
         });
-        Db.SaveChanges();
     }
 
     private void InputCategory(out string name)
@@ -62,8 +76,38 @@ public class ShopDBManger : IDisposable
     {
         InputCategory(out string name);
         
-        Db.Categories.Add(new Category(){ Name =  name });
-        Db.SaveChanges();
+        var categoryService = _serviceProvider.GetService<ICategoryService>();
+        categoryService.Add(new Category(){ Name =  name });
+    }
+
+    private int InputCategoryId()
+    {
+        Console.Write("Enter Categoty Id: ");
+        return int.Parse(Console.ReadLine());
+    }
+    public void UpdateCategory()
+    {
+        var categoryService = _serviceProvider.GetService<ICategoryService>();
+        var category = categoryService.GetCategoryById(InputCategoryId());
+        if (category == null)
+        {
+            throw new Exception("Category not found");
+        }
+        InputCategory(out string name);
+        category.Name = name;
+        
+        categoryService.Update(category);
+    }
+
+    public void DeleteCategory()
+    {
+        var categoryService = _serviceProvider.GetService<ICategoryService>();
+        var category = categoryService.GetCategoryById(InputCategoryId());
+        if (category == null)
+        {
+            throw new Exception("Category not found");
+        }
+        categoryService.Delete(category);
     }
 
     private int InputProductId()
@@ -80,13 +124,14 @@ public class ShopDBManger : IDisposable
     
     public void UpdateProductName()
     {
-        var product = Db.Products.Find(InputProductId());
-        if (product == null)
-        {
-            throw new Exception("Product not found");
-        }
-        product.Name = NewProductName();
-        Db.SaveChanges();
+       var productService = _serviceProvider.GetService<IProductService>();
+       var product = productService.GetProductById(InputProductId());
+       if (product == null)
+       {
+           throw new Exception("Product not found");
+       }
+       product.Name = NewProductName();
+       productService.Update(product);
     }
 
     private int InputNewQuantity()
@@ -97,46 +142,34 @@ public class ShopDBManger : IDisposable
 
     public void UpdateProductQuantity()
     {
-        var product = Db.Products.Find(InputProductId());
-        if (product == null)
-        {
-            throw new Exception("Product not found");
-        }
-        product.StockQuantity = InputNewQuantity();
-        Db.SaveChanges();
+       var productService = _serviceProvider.GetService<IProductService>();
+       var product = productService.GetProductById(InputProductId());
+       if (product == null)
+       {
+           throw new Exception("Product not found");
+       }
+       product.StockQuantity = InputNewQuantity();
+       productService.Update(product);
     }
 
     public void RemoveProduct()
     {
-        var product = Db.Products.Find(InputProductId());
+        var productService = _serviceProvider.GetService<IProductService>();
+        var product = productService.GetProductById(InputProductId());
         if (product == null)
         {
             throw new Exception("Product not found");
         }
-        Db.Products.Remove(product);
-        Db.SaveChanges();
+        productService.Delete(product);
     }
 
-    public void ShowProductsOutOfStock()
+    public IEnumerable<Product> GetAllProducts()
     {
-        var product = Db.Products.Where(p => p.StockQuantity == 0).ToList();
-        foreach (var p in product)
-        {
-            Console.WriteLine($"{p.Id} - {p.Name} - {p.StockQuantity} - {p.CategoryId}");
-        }
-    }
-
-    public void ShowTop3MostExpensiveProducts()
-    {
-        var products = Db.Products.OrderBy(p => p.Price).Take(3).ToList();
-        foreach (var p in products)
-        {
-            Console.WriteLine($"{p.Id} - {p.Name} - {p.Price}");
-        }
+        return _serviceProvider.GetService<IProductRepository>().GetAll();
     }
     
-    public void Dispose()
+    public IEnumerable<Category> GetAllCategories()
     {
-        Db.Dispose();
+        return _serviceProvider.GetService<ICategoryRepository>().GetAll();
     }
 }

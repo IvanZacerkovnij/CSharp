@@ -1,26 +1,28 @@
-﻿using Homework1.Context;
-using Homework1.Manager;
+﻿using Homework1_EF.Context;
+using Homework1_EF.Manager;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Homework1;
+namespace Homework1_EF;
 
 class Program
 {
     
     static void Main(string[] args)
     {
-        using (var manager = new ShopDBManger(new ShopDBContext()))
+        var manager = new ShopDBManger();
+        
+        Console.WriteLine("==== Products ====");
+        var products = manager.GetAllProducts();
+        foreach (var product in products)
         {
-            manager.CreateCategory();
-            manager.CreateProduct();
-            manager.CreateProduct();
-            manager.CreateProduct();
-            manager.CreateProduct();
-            
-            manager.UpdateProductName();
-            manager.UpdateProductQuantity();
-            manager.ShowProductsOutOfStock();
-            manager.RemoveProduct();
-            manager.ShowTop3MostExpensiveProducts();
+            Console.WriteLine($"{product.Name} - {product.Price}");
+        }
+        
+        Console.WriteLine("==== Categories ====");
+        var categories = manager.GetAllCategories();
+        foreach (var category in categories)
+        {
+            Console.WriteLine($"{category.Name}");
         }
     }
 }
